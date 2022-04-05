@@ -24,16 +24,11 @@ public class ServicioRazas {
         this.razas = razas;
     }
     
-    @Override
-    public String toString() {
-        return "raza: " + this.razas;
-    }
-    
     public void mostrarRazas() {
         System.out.println("");
         System.out.println("Las razas ingresadas son:");
         for (String var : razas) {
-            System.out.println(var.toString());
+            System.out.println(var);
         }
         System.out.println("");
     }

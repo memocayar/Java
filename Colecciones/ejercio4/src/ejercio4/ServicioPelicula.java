@@ -26,7 +26,7 @@ public class ServicioPelicula {
         String director = leer.next();
 
         System.out.println("Ingresar duracion de la pelicula en horas");
-        Integer duracion = leer.nextInt();
+        Double duracion = leer.nextDouble();
 
         return new Pelicula(titulo, director, duracion);
     }

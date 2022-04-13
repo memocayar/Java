@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio6">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio6" package="Tienda" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="Tienda.entidades" visibility="public" xPosition="239.0" yPosition="234.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precio" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getPrecio" returnType="Double" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="Double" name="precio"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ServicioProducto" package="Tienda.servicios" visibility="public" xPosition="629.0" yPosition="91.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="productosTienda" type="HashMap&lt;String, Double&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearProducto" returnType="Producto" visibility="public"/>
+        <Method name="agregarProducto" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="Double" name="precio"/>
+        </Method>
+        <Method name="fabricaDeProductos" returnType="void" visibility="public"/>
+        <Method name="eliminarProducto" returnType="void" visibility="public"/>
+        <Method name="mostrarProductos" returnType="void" visibility="public"/>
+        <Method name="modificarPrecio" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Tienda.servicios.ServicioProducto" target="Tienda.entidades.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

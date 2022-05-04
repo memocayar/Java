@@ -58,7 +58,7 @@ public class Perro {
         this.edad = edad;
     }
 
-    public void setTramaño(String tamano) {
+    public void setTamano(String tamano) {
         this.tamano = tamano;
     }
 }

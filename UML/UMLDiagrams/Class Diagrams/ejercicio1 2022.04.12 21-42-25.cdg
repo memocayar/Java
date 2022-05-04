@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio1">
+  <ClassDiagramComponents>
+    <Class name="Adopcion" package="adopcion" visibility="public" xPosition="605.0" yPosition="39.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Perro" package="adopcion.entidades" visibility="public" xPosition="644.0" yPosition="215.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="raza" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="tamano" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="raza"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="String" name="tamano"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getRaza" returnType="String" visibility="public"/>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="getTamano" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setRaza" returnType="void" visibility="public">
+          <Argument type="String" name="raza"/>
+        </Method>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="setTamano" returnType="void" visibility="public">
+          <Argument type="String" name="tamano"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="adopcion.entidades" visibility="public" xPosition="1161.0" yPosition="177.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="DNI" type="long" visibility="private"/>
+        <Field name="perro" type="Perro" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="long" name="DNI"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="edad"/>
+          <Argument type="long" name="DNI"/>
+          <Argument type="Perro" name="perro"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="getEdad" returnType="int" visibility="public"/>
+        <Method name="getDNI" returnType="long" visibility="public"/>
+        <Method name="getPerro" returnType="Perro" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="int" name="edad"/>
+        </Method>
+        <Method name="setDNI" returnType="void" visibility="public">
+          <Argument type="long" name="DNI"/>
+        </Method>
+        <Method name="setPerro" returnType="void" visibility="public">
+          <Argument type="Perro" name="perro"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ServicioPersona" package="adopcion.servicios" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+        <Field name="lista" type="ArrayList&lt;Persona&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearPersona" returnType="Persona" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="lista" source="adopcion.servicios.ServicioPersona" target="adopcion.entidades.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Persona&gt;"/>
+    <UseRelation source="adopcion.entidades.Persona" target="adopcion.entidades.Perro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="perro" source="adopcion.entidades.Persona" target="adopcion.entidades.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="adopcion.servicios.ServicioPersona" target="adopcion.entidades.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

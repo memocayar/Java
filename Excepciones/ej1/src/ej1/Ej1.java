@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejerciciosFundamentales.ejercicio7;
+package ej1;
 
 import java.util.ArrayList;
 
@@ -11,33 +11,35 @@ import java.util.ArrayList;
  *
  * @author Maria Emilia
  */
-public class ej7 {
+public class Ej1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("AKSDJASK");
         ArrayList<Persona> Personas = new ArrayList();
+//
+//        Persona p1 = new Persona("Elias", 15, "H", 65.0, 1.77);
+//        Persona p2 = new Persona("Maria Emilia", 18, "M", 46.5, 1.59);
+//        Persona p3 = new Persona("Neva", 19, "O", 53.0, 1.65);
+//        Persona p4 = new Persona("Adriel", 23, "H", 65.0, 1.53);
+        Persona p5 = new Persona();
 
-        Persona p1 = new Persona("Elias", 15, "H", 65.0, 1.77);
-        Persona p2 = new Persona("Maria Emilia", 18, "M", 46.5, 1.59);
-        Persona p3 = new Persona("Neva", 19, "O", 53.0, 1.65);
-        Persona p4 = new Persona("Adriel", 23, "H", 65.0, 1.53);
-//        Persona p5 = new Persona();
-
-        Personas.add(p1);
-        Personas.add(p2);
-        Personas.add(p3);
-        Personas.add(p4);
-//        Personas.add(p5);
+//        Personas.add(p1);
+//        Personas.add(p2);
+//        Personas.add(p3);
+//        Personas.add(p4);
+        Personas.add(p5);
 
         ArrayList<Double> IMCs = new ArrayList();
         for (Persona p : Personas) {
-            System.out.println(p.calcularIMC());
-            Double aux = p.calcularIMC();
-            IMCs.add(aux);
+            try {
+                Double aux = p.calcularIMC();
+                IMCs.add(aux);
+            } catch (NullPointerException e) {
+                System.out.println("No se pudo calcular el IMC");
+            }
         }
 
         ArrayList<Boolean> Mayores = new ArrayList();
